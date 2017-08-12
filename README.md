@@ -8,8 +8,9 @@ init npm with package.json:
 install react tools and wepback
 * npm install —save react
 * npm install —save react-dom 
-* npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react webpack
-* npm install -global webpack
+* npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react react-hot-loader webpack webpack-dev-server
+* npm install -global webpack webpack-dev-server
+* npm install --save-dev react-hot-loader
 
 additional libs: ui for my application, jquery, css loaders.
 * npm install material-ui

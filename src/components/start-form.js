@@ -3,6 +3,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import styles from './css/main.css';
+var jsonSource = require('./source.js');
 
 class StartForm extends React.Component {
     constructor(props) {
@@ -37,10 +38,13 @@ class StartForm extends React.Component {
     handleSubmit = () => {
         // TODO : make one file with server's name and port
         let url = "http://localhost:8080/link=" + this.state.id + "&posts=" + this.state.posts;
-        message = url;
-        $.getJSON(url, function (data) {
-            alert(message)
-        });
+        let jsonSource = jsonSource.json; // json example
+
+        
+        /*$.getJSON(jsonSource.json, function (data) {
+        	console.log("json loaded");
+        	alert("average likes: " + data.averageLikes);
+        });*/
     };
 
     // TODO : one function
