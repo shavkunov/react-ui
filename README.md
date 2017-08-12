@@ -1,4 +1,6 @@
-# how to react:
+# How to react:
+
+## Preparing.
 
 * mkdir ‘app_name’
 
@@ -16,3 +18,11 @@ additional libs: ui for my application, jquery, css loaders.
 * npm install material-ui
 * npm install jquery
 * npm install style-loader css-loader --save
+
+## Running
+To build your final js script run:
+* webpack
+
+run
+* webpack-dev-server
+and visit localhost:8080
