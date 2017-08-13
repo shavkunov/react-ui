@@ -17,7 +17,7 @@ class StatsPostsView extends React.Component {
     render() {
         return (
             <div>
-                <h4>TODO : create a field "category of post" in post </h4>
+                <h4> {this.props.table.bestLikesPost.description} </h4>
                 <PostView data={this.props.table.bestLikesPost} />
             </div>
         );

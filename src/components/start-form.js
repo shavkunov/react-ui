@@ -16,6 +16,7 @@ class StartForm extends React.Component {
 
     render() {
         // TODO : handle form input: errors, validation. Need to generate forms
+        // TODO : request url to user, but need only id, so need to cut vk prefix
         return (
             <div className={styles.flexCenterStyle}>
 

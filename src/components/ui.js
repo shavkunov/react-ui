@@ -19,7 +19,6 @@ class UI extends React.Component {
         if (this.state.isTableLoaded) {
             return (
                 <div>
-                    {console.log(this.state.table)}
                     <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
                     <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
                 </div>
@@ -36,7 +35,6 @@ class UI extends React.Component {
         // TODO : make one file with server's name and port
         let url = "http://localhost:8080/link=" + link + "&posts=" + posts;   
 
-        console.log(jsonSource.json);
         this.setState({
             name: "alfabank",
             posts: posts,

@@ -9,8 +9,7 @@ class PostView extends React.Component {
     render() {
         return (
             <div>
-                <h5> link: TODO link </h5>
-
+                <h5> <a href={this.props.data.postLink}> post link</a> </h5>
                 <Divider />
 
                 <p> {this.props.data.text} </p>
