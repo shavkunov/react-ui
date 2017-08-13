@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import StartForm from './components/StartForm.js';
+import UI from './components/ui.js';
 
 const App = () => (
     <MuiThemeProvider>
-        <StartForm />
+        <UI />
     </MuiThemeProvider>
 );
 

@@ -1,56 +1,43 @@
-import $ from "jquery";
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import styles from './css/main.css';
-var jsonSource = require('./source.js');
+//var jsonSource = require('./source.js');
 
 class StartForm extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            id: "",
-            posts: 0.
+            link: "",
+            posts: 0
         };
     }
 
-    render () {
+    render() {
         // TODO : handle form input: errors, validation. Need to generate forms
         return (
             <div className={styles.flexCenterStyle}>
 
                     <TextField
                         floatingLabelText="Link"
-                        onChange={this.handleIdChange.bind(this)}/> <br />
+                        onChange={this.handleLinkChange.bind(this)}/> <br />
 
                     <TextField
                         floatingLabelText="Posts"
                         onChange={this.handlePostsChange.bind(this)}/> <br />
 
                     <RaisedButton label="Submit"
-                                  onClick={this.handleSubmit.bind(this)}/> <br />
+                                  onClick={this.props.handleSubmit.bind(null, this.state.link, this.state.posts)}/> <br />
 
             </div>
         );
     }
 
-    handleSubmit = () => {
-        // TODO : make one file with server's name and port
-        let url = "http://localhost:8080/link=" + this.state.id + "&posts=" + this.state.posts;
-        let jsonSource = jsonSource.json; // json example
-
-        
-        /*$.getJSON(jsonSource.json, function (data) {
-        	console.log("json loaded");
-        	alert("average likes: " + data.averageLikes);
-        });*/
-    };
-
     // TODO : one function
-    handleIdChange = (event) => {
+    handleLinkChange = (event) => {
         this.setState({
-            id: event.target.value,
+            link: event.target.value,
         });
     };
 

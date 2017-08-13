@@ -1,6 +1,6 @@
 # How to react:
 
-## Preparing.
+## Preparing
 
 * mkdir ‘app_name’
 
