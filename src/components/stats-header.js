@@ -1,5 +1,5 @@
 import React from 'react';
-import UserAvatar from './user-avatar.js';
+import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Subheader from 'material-ui/Subheader';
@@ -14,14 +14,13 @@ class StatsHeader extends React.Component {
 
     render() {
         let statsHeader = "stats of " + this.props.posts + " last posts";
-
         return (
             <div>
                 <List>
-                    <ListItem disabled={true} leftAvatar={<Avatar src="https://pp.userapi.com/c837125/v837125523/364c8/suxseu6Hjos.jpg" />} primaryText={this.props.name} />
+                    <ListItem disabled={true} leftAvatar={<Avatar src={this.props.owner.photo} />} primaryText={this.props.owner.name} />
                     <ListItem disabled={true} primaryText={statsHeader} />
                 </List>
-                
+
                 <List>
                   <Subheader> average values </Subheader>
                   <Divider />

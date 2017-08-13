@@ -10,11 +10,11 @@ class StatsView extends React.Component {
     render() {
         return (
             <div>
-                <StatsHeader name={this.props.name} 
-                             posts={this.props.posts}
+                <StatsHeader posts={this.props.posts}
                              averageLikes={this.props.table.averageLikes}
                              averageReposts={this.props.table.averageReposts}
                              averageViews={this.props.table.averageViews}
+                             owner={this.props.table.owner}
                              />
 
                 <StatsPostsView table={this.props.table}/>
