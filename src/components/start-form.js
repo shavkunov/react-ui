@@ -1,7 +1,14 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import styles from './css/main.css';
+
+const center = {
+	display: "flex",
+	flexDirection: "column",
+	flexWrap: "wrap",
+	justifyContent: "center",
+	alignItems: "center",
+};
 
 class StartForm extends React.Component {
     constructor(props) {
@@ -17,18 +24,21 @@ class StartForm extends React.Component {
         // TODO : handle form input: errors, validation. Need to generate forms
         // TODO : request url to user, but need only id, so need to cut vk prefix
         return (
-            <div className={styles.flexCenterStyle}>
+            <div style={center}>
 
                     <TextField
                         floatingLabelText="Link"
-                        onChange={this.handleLinkChange.bind(this)}/> <br />
+                        onChange={this.handleLinkChange.bind(this)}
+                        /> 
 
                     <TextField
                         floatingLabelText="Posts"
-                        onChange={this.handlePostsChange.bind(this)}/> <br />
+                        onChange={this.handlePostsChange.bind(this)}
+                        /> 
 
                     <RaisedButton label="Submit"
-                                  onClick={this.props.handleSubmit.bind(null, this.state.link, this.state.posts)}/> <br />
+                                  onClick={this.props.handleSubmit.bind(null, this.state.link, this.state.posts)}
+								  />
 
             </div>
         );

@@ -7,6 +7,14 @@ import Reposts from 'material-ui/svg-icons/social/share';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import Visibility from 'material-ui/svg-icons/action/visibility';
 
+const center = {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+};
+
 class StatsHeader extends React.Component {
     constructor(props) {
         super(props);
@@ -15,14 +23,15 @@ class StatsHeader extends React.Component {
     render() {
         let statsHeader = "stats of " + this.props.posts + " last posts";
         return (
-            <div>
+            <div style={center}>
                 <List>
                     <ListItem disabled={true} leftAvatar={<Avatar src={this.props.owner.photo} />} primaryText={this.props.owner.name} />
-                    <ListItem disabled={true} primaryText={statsHeader} />
                 </List>
 
+                <p> {statsHeader} </p>
+
                 <List>
-                  <Subheader> average values </Subheader>
+                  <Subheader> Average values </Subheader>
                   <Divider />
                   <ListItem disabled={true} primaryText={this.props.averageLikes} leftIcon={<Favorite />} />
                   <ListItem disabled={true} primaryText={this.props.averageReposts} leftIcon={<Reposts />} />

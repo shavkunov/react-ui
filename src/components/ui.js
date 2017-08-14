@@ -21,7 +21,7 @@ class UI extends React.Component {
             return (
                 <div>
                     <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
-                    <Paper zDepth={4}>
+                    <Paper zDepth={4} style={{ marginTop: "15px"}}>
                         <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
                     </Paper>
                 </div>
