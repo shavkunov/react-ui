@@ -10,7 +10,18 @@ const rowAlignment = {
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "start",
+    margin: "auto",
 };
+
+const center = {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
+    marginTop: "15px",
+}
 
 class StatsPostsView extends React.Component {
     constructor(props) {
@@ -29,14 +40,18 @@ class StatsPostsView extends React.Component {
 
     render() {
         return (
-            <div>
-                <Tabs onChange={this.handleChange} value={this.state.slideIndex}>
+            <div style={center}>
+                <Tabs onChange={this.handleChange} 
+                      value={this.state.slideIndex} 
+                      style={{ width: "90%" }}>
                     <Tab label="Likes" icon={<Favorite />} value={0}/>
                     <Tab label="Reposts" icon={<Reposts />} value={1}/>
                     <Tab label="Views" icon={<Visibility />} value={2}/>
                 </Tabs>
 
-                <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange}>
+                <SwipeableViews index={this.state.slideIndex} 
+                                onChangeIndex={this.handleChange}
+                                style={{ width: "90%" }}>
 
                     <div style={rowAlignment}>
                         <PostView data={this.props.table.bestLikesPost} />

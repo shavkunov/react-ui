@@ -5,6 +5,23 @@ import StatsView from './stats-view'
 import Paper from 'material-ui/Paper';
 var jsonSource = require('./source.js');
 
+const paper = {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "15px",
+    width: "90%",
+};
+
+var center = {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+};
+
 class UI extends React.Component {
     constructor() {
         super();
@@ -13,15 +30,14 @@ class UI extends React.Component {
             isTableLoaded: false,
             table: null
         }
-
     }
 
     render() {
         if (this.state.isTableLoaded) {
             return (
-                <div>
+                <div style={center}>
                     <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
-                    <Paper zDepth={4} style={{ marginTop: "15px"}}>
+                    <Paper zDepth={4} style={paper}>
                         <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
                     </Paper>
                 </div>

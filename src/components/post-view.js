@@ -11,7 +11,7 @@ const center = {
     flexWrap: "wrap",
     justifyContent: "start",
     alignItems: "center",
-    width: "50%",
+    width: "45%",
 };
 
 const rowAlignment = {
@@ -19,6 +19,7 @@ const rowAlignment = {
     flexDirection: "row",
     alignItems: "center",
     flexWrap: "wrap",
+    marginTop: "10px",
 };
 
 class PostView extends React.Component {
@@ -49,7 +50,7 @@ class PostView extends React.Component {
         if (this.props.data.images.length == 1) {
             let imageUrl = this.props.data.images[0];
             return (
-                <img src={imageUrl} /> 
+                <img src={imageUrl} style={{ maxHeight: "500px", maxWidth: "500px", }}/> 
             );
         }
 
