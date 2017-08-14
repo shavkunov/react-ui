@@ -2,6 +2,7 @@ import React from 'react';
 import StartForm from './start-form'
 import $ from "jquery";
 import StatsView from './stats-view'
+import Paper from 'material-ui/Paper';
 var jsonSource = require('./source.js');
 
 class UI extends React.Component {
@@ -20,7 +21,9 @@ class UI extends React.Component {
             return (
                 <div>
                     <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
-                    <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
+                    <Paper zDepth={4}>
+                        <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
+                    </Paper>
                 </div>
             );
         }
