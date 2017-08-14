@@ -5,6 +5,22 @@ import Reposts from 'material-ui/svg-icons/social/share';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import Visibility from 'material-ui/svg-icons/action/visibility';
 
+const center = {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "start",
+    alignItems: "center",
+    width: "50%",
+};
+
+const rowAlignment = {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+};
+
 class PostView extends React.Component {
     constructor(props) {
         super(props);
@@ -12,19 +28,18 @@ class PostView extends React.Component {
 
     render() {
         return (
-            <div>
-                <h4> {this.props.data.description} </h4>
-                <h5> <a href={this.props.data.postLink}> post link</a> </h5>
-                <Divider />
+            <div style={center}>
+                <h4  style={{marginTop: "5px", marginBottom: "0px"}}> {this.props.data.description} </h4>
+                <p style={{marginTop: "10px", marginBottom: "0px"}}> <a href={this.props.data.postLink}> Post link </a> </p>
 
                 <p> {this.props.data.text} </p>
 
                 {this.renderImage()}
 
-                <div>
-                    <Favorite /> {this.props.data.likes} 
-                    <Reposts /> {this.props.data.reposts}
-                    <Visibility /> {this.props.data.views}
+                <div style={rowAlignment}>
+                    <Favorite style={{ marginLeft: "10px", marginRight: "5px" }} /> {this.props.data.likes} 
+                    <Reposts style={{ marginLeft: "10px", marginRight: "5px" }} /> {this.props.data.reposts}
+                    <Visibility style={{ marginLeft: "10px", marginRight: "5px" }} /> {this.props.data.views}
                 </div>
             </div>
         );

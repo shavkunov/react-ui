@@ -6,6 +6,12 @@ import Reposts from 'material-ui/svg-icons/social/share';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import Visibility from 'material-ui/svg-icons/action/visibility';
 
+const rowAlignment = {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+};
+
 class StatsPostsView extends React.Component {
     constructor(props) {
         super(props);
@@ -31,18 +37,22 @@ class StatsPostsView extends React.Component {
                 </Tabs>
 
                 <SwipeableViews index={this.state.slideIndex} onChangeIndex={this.handleChange}>
-                    <div>
+
+                    <div style={rowAlignment}>
                         <PostView data={this.props.table.bestLikesPost} />
                         <PostView data={this.props.table.worseLikesPost} />
                     </div>
-                    <div>
+
+                    <div style={rowAlignment}>
                         <PostView data={this.props.table.bestRepostsPost} />
                         <PostView data={this.props.table.worseRepostsPost} />
                     </div>
-                    <div>
+
+                    <div style={rowAlignment}>
                         <PostView data={this.props.table.bestViewsPost} />
                         <PostView data={this.props.table.worseViewsPost} />
                     </div>
+
                 </SwipeableViews>
             </div>
         );

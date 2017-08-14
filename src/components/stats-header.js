@@ -21,7 +21,7 @@ class StatsHeader extends React.Component {
     }
 
     render() {
-        let statsHeader = "stats of " + this.props.posts + " last posts";
+        let statsHeader = "Statistics of " + this.props.posts + " last posts";
         return (
             <div style={center}>
                 <List>
