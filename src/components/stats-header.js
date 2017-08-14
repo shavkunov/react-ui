@@ -15,6 +15,13 @@ const center = {
     alignItems: "center",
 };
 
+const rowAlignment = {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    flexWrap: "wrap",
+};
+
 class StatsHeader extends React.Component {
     constructor(props) {
         super(props);
@@ -25,20 +32,20 @@ class StatsHeader extends React.Component {
         return (
             <div style={center}>
                 <List>
-                    <ListItem disabled={true} leftAvatar={<Avatar src={this.props.owner.photo} />} primaryText={this.props.owner.name} />
+                    <ListItem disabled={true} 
+                              leftAvatar={<Avatar src={this.props.owner.photo} />} 
+                              primaryText={<a href={this.props.owner.link}> {this.props.owner.name} </a>} /> 
                 </List>
 
                 <p> {statsHeader} </p>
 
-                <List>
-                  <Subheader> Average values </Subheader>
-                  <Divider />
-                  <ListItem disabled={true} primaryText={this.props.averageLikes} leftIcon={<Favorite />} />
-                  <ListItem disabled={true} primaryText={this.props.averageReposts} leftIcon={<Reposts />} />
-                  <ListItem disabled={true} primaryText={this.props.averageViews} leftIcon={<Visibility />} />
-                </List>
+                <Subheader style={center}> Average values </Subheader>
 
-                <Divider />
+                <div style={rowAlignment}>
+                    <Favorite style={{ marginLeft: "15px", marginRight: "10px" }} /> {this.props.averageLikes} 
+                    <Reposts style={{ marginLeft: "15px", marginRight: "10px" }} /> {this.props.averageReposts}
+                    <Visibility style={{ marginLeft: "15px", marginRight: "10px" }} /> {this.props.averageViews}
+                </div>
             </div>
         );
     }
