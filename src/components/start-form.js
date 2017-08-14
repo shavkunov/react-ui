@@ -2,7 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const center = {
+var center = {
 	display: "flex",
 	flexDirection: "column",
 	flexWrap: "wrap",

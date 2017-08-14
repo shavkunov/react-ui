@@ -32,21 +32,22 @@ class UI extends React.Component {
         }
     }
 
-    render() {
+    renderTable = () => {
         if (this.state.isTableLoaded) {
             return (
-                <div style={center}>
-                    <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
-                    <Paper zDepth={4} style={paper}>
-                        <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
-                    </Paper>
-                </div>
+                <Paper zDepth={4} style={paper}>
+                    <StatsView name={this.state.name} posts={this.state.posts} table={this.state.table}/>
+                </Paper>
             );
         }
+    }
 
-
+    render() {
         return (
-            <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
+            <div style={center}>
+                <StartForm handleSubmit={this.handleSubmit.bind(this)}/>
+                {this.renderTable()}
+            </div>
         );
     }
 

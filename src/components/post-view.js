@@ -33,7 +33,7 @@ class PostView extends React.Component {
                 <h4  style={{marginTop: "5px", marginBottom: "0px"}}> {this.props.data.description} </h4>
                 <p style={{marginTop: "10px", marginBottom: "0px"}}> <a href={this.props.data.postLink}> Post link </a> </p>
 
-                <p> {this.props.data.text} </p>
+                <p style={{ marginRight: "5px", marginLeft: "5px" }}> {this.props.data.text} </p>
 
                 {this.renderImage()}
 
