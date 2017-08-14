@@ -1,12 +1,4 @@
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
 import PostView from './post-view';
 
 class StatsPostsView extends React.Component {
@@ -16,10 +8,22 @@ class StatsPostsView extends React.Component {
 
     render() {
         return (
-            <div>
-                <h4> {this.props.table.bestLikesPost.description} </h4>
-                <PostView data={this.props.table.bestLikesPost} />
-            </div>
+            <table>
+                <tr>
+                    <td> <PostView data={this.props.table.bestLikesPost}/> </td>
+                    <td> <PostView data={this.props.table.worseLikesPost}/> </td>
+                </tr>
+
+                <tr>
+                    <td> <PostView data={this.props.table.bestRepostsPost}/> </td>
+                    <td> <PostView data={this.props.table.worseRepostsPost}/> </td>
+                </tr>
+
+                <tr>
+                    <td> <PostView data={this.props.table.bestViewsPost}/> </td>
+                    <td> <PostView data={this.props.table.worseViewsPost}/> </td>
+                </tr>
+            </table>
         );
     }
 }
