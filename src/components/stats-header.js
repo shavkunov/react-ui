@@ -15,6 +15,16 @@ const center = {
     alignItems: "center",
 };
 
+const header = {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "0px",
+    marginBottom: "0px"
+};
+
 const rowAlignment = {
     display: "flex",
     flexDirection: "row",
@@ -31,15 +41,15 @@ class StatsHeader extends React.Component {
         let statsHeader = "Statistics of " + this.props.posts + " last posts";
         return (
             <div style={center}>
-                <List>
+                <List style={header}>
                     <ListItem disabled={true} 
                               leftAvatar={<Avatar src={this.props.owner.photo} />} 
                               primaryText={<a href={this.props.owner.link}> {this.props.owner.name} </a>} /> 
                 </List>
 
-                <p> {statsHeader} </p>
+                <p style={header}> {statsHeader} </p>
 
-                <Subheader style={center}> Average values </Subheader>
+                <Subheader style={header}> Average values </Subheader>
 
                 <div style={rowAlignment}>
                     <Favorite style={{ marginLeft: "15px", marginRight: "10px" }} /> {this.props.averageLikes} 
