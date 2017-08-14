@@ -1,5 +1,9 @@
 import React from 'react';
 import PostView from './post-view';
+import {Tabs, Tab} from 'material-ui/Tabs';
+import Reposts from 'material-ui/svg-icons/social/share';
+import Favorite from 'material-ui/svg-icons/action/favorite';
+import Visibility from 'material-ui/svg-icons/action/visibility';
 
 class StatsPostsView extends React.Component {
     constructor(props) {
@@ -8,22 +12,28 @@ class StatsPostsView extends React.Component {
 
     render() {
         return (
-            <table>
-                <tr>
-                    <td> <PostView data={this.props.table.bestLikesPost}/> </td>
-                    <td> <PostView data={this.props.table.worseLikesPost}/> </td>
-                </tr>
+            <Tabs>
+                <Tab label="Likes" icon={<Favorite />}>
+                  <div>
+                    <PostView data={this.props.table.bestLikesPost} />
+                    <PostView data={this.props.table.worseLikesPost} />
+                  </div>
+                </Tab>
 
-                <tr>
-                    <td> <PostView data={this.props.table.bestRepostsPost}/> </td>
-                    <td> <PostView data={this.props.table.worseRepostsPost}/> </td>
-                </tr>
+                <Tab label="Reposts" icon={<Reposts />}>
+                  <div>
+                    <PostView data={this.props.table.bestRepostsPost} />
+                    <PostView data={this.props.table.worseRepostsPost} />
+                  </div>
+                </Tab>
 
-                <tr>
-                    <td> <PostView data={this.props.table.bestViewsPost}/> </td>
-                    <td> <PostView data={this.props.table.worseViewsPost}/> </td>
-                </tr>
-            </table>
+                <Tab label="Views" icon={<Visibility />}>
+                  <div>
+                    <PostView data={this.props.table.bestViewsPost} />
+                    <PostView data={this.props.table.worseViewsPost} />
+                  </div>
+                </Tab>
+            </Tabs>
         );
     }
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import styles from './css/main.css';
-//var jsonSource = require('./source.js');
 
 class StartForm extends React.Component {
     constructor(props) {
