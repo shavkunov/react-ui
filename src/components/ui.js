@@ -3,7 +3,6 @@ import StartForm from './start-form'
 import $ from "jquery";
 import StatsView from './stats-view'
 import Paper from 'material-ui/Paper';
-var jsonSource = require('./source.js');
 
 const paper = {
     display: "flex",
@@ -51,20 +50,11 @@ class UI extends React.Component {
         );
     }
 
-    handleSubmit = (link, posts) => {
-        // TODO : make one file with server's name and port
-        let url = "http://localhost:8080/link=" + link + "&posts=" + posts;   
-
+    handleSubmit = (table) => {
         this.setState({
-            name: "alfabank",
-            posts: posts,
             isTableLoaded: true,
-            table: jsonSource.json
+            table: table,
         });
-        /*$.getJSON(jsonSource.json, function (data) {
-            console.log("json loaded");
-            alert("average likes: " + data.averageLikes);
-        });*/
     };
 }
 
